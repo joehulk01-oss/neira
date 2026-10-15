@@ -1,0 +1,20 @@
+{
+    "path": "/chat/completion",
+    "method": "POST",
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "payload": {
+        "messages": [
+            {
+                "role": "user",
+                "content": "{{PROMPT}}",
+                "content_type": "text"
+            }
+        ],
+        "model": "",
+        "skill": "chat",
+        "stream": false
+    },
+    "_note": "Default template — jalankan dola_chat(action='setup') atau otak(action='setup') sekali untuk mengganti dengan bentuk asli hasil sniff dari browser."
+}

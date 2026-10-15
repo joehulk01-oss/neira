@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Kepercayaan TLS untuk WebView (termasuk WebSocket wss://).
+    IP PC sering berubah (WiFi / hotspot HP / tether) — cert per-IP tidak
+    dipakai lagi. Sekarang: CA lokal Neira (ca.pem) jadi trust anchor untuk
+    SEMUA alamat; gateway menyajikan leaf yang ditandatangani CA dengan SAN
+    semua IP LAN aktif (certs/gen_certs.py, jalan otomatis dari run_local.bat).
+    raw/neira_cert = ca.pem dalam DER — otomatis di-sync oleh gen_certs.py.
+    Manual: openssl x509 -in certs/ca.pem -outform DER
+            -out neira-android/app/src/main/res/raw/neira_cert
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="@raw/neira_cert" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

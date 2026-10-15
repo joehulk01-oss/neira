@@ -1,0 +1,5 @@
+# Neira Gateway — reverse proxy + HTTPS otomatis (Let's Encrypt)
+# DOMAIN diisi di .env (mis: neira.example.com)
+{$DOMAIN} {
+	reverse_proxy gateway:8765
+}

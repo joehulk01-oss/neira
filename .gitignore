@@ -1,0 +1,90 @@
+# Environment / secrets
+.env
+.env.*
+*.env
+config.env
+shared/config.env
+!*.env.example
+
+# API keys / credentials
+**/api_keys.json
+**/credentials.json
+**/service_account*.json
+**/*serviceaccount*.json
+**/secrets*.json
+**/tokens*.json
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+neira-gateway/certs/
+
+# Logs
+*.log
+logs/
+gw.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+dist/
+build/
+.next/
+.turbo/
+coverage/
+
+# Build / cache
+.cache/
+target/
+*.apk
+*.aab
+*.class
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# DB / data dumps
+*.sqlite
+*.sqlite3
+*.db
+
+# Runtime state / memory dumps
+Mark-LIV-main/memory/jobs.json
+Mark-LIV-main/memory/metrics.json
+Mark-LIV-main/audit/events.jsonl
+
+# Embedded repos / heavy junk (matched anywhere)
+**/hermes-agent/
+**/abigail_repo/
+**/codebase-memory-mcp/
+**/storefront-ui/
+**/Brahma-Echo/
+**/openmuse/
+**/browser_data/
+*.txt.bak
+
+# Workspace / runtime dumps
+Mark-LIV-main/workspace/
+scratch/sc_out*.txt
+scratch/health_out.txt
+scratch/verify_*.py
+neira-android/*.txt
+neira-android/*.png
+neira-android/neira_pref_tmp.xml
+neira-android/pref_neira.xml
+skills_summary.txt
+wa_click_analysis.txt
+whatsapp_robust_sender.py

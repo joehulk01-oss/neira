@@ -1,0 +1,164 @@
+{
+    "_comment": "Policy default Neira — Tahap 1 Fondasi Keamanan (blueprint). Edit file ini TANPA restart (mtime dipantau policy_engine). Struktur rules: action -> [risk, decision]. decision: allow | confirm | deny. Aksi tidak terdaftar -> default_decision/default_risk.",
+    "default_decision": "allow",
+    "default_risk": "low",
+    "rules": {
+        "app.list": [
+            "low",
+            "allow"
+        ],
+        "app.switch": [
+            "low",
+            "allow"
+        ],
+        "app.open": [
+            "low",
+            "allow"
+        ],
+        "app.close": [
+            "medium",
+            "allow"
+        ],
+        "app.kill": [
+            "high",
+            "confirm"
+        ],
+        "process.kill": [
+            "critical",
+            "deny"
+        ],
+        "file.delete": [
+            "high",
+            "confirm"
+        ],
+        "file.write_outside_workspace": [
+            "high",
+            "confirm"
+        ],
+        "message.send": [
+            "high",
+            "confirm"
+        ],
+        "settings.security_change": [
+            "critical",
+            "deny"
+        ],
+        "system.shutdown": [
+            "high",
+            "confirm"
+        ],
+        "system.restart": [
+            "high",
+            "confirm"
+        ],
+        "window.list": [
+            "low",
+            "allow"
+        ],
+        "window.active": [
+            "low",
+            "allow"
+        ],
+        "window.focus": [
+            "low",
+            "allow"
+        ],
+        "window.minimize": [
+            "medium",
+            "allow"
+        ],
+        "window.maximize": [
+            "medium",
+            "allow"
+        ],
+        "window.restore": [
+            "medium",
+            "allow"
+        ],
+        "window.close": [
+            "high",
+            "confirm"
+        ],
+        "awareness.snapshot": [
+            "low",
+            "allow"
+        ],
+        "memory.analyze": [
+            "low",
+            "allow"
+        ],
+        "memory.compact": [
+            "medium",
+            "allow"
+        ],
+        "selfheal.apply": [
+            "low",
+            "allow"
+        ],
+        "workflow.run": [
+            "low",
+            "allow"
+        ],
+        "workspace.analyze": [
+            "low",
+            "allow"
+        ],
+        "workspace.backup": [
+            "medium",
+            "allow"
+        ],
+        "devtools.run_tests": [
+            "medium",
+            "allow"
+        ],
+        "logs.scan": [
+            "low",
+            "allow"
+        ],
+        "planner.plan": [
+            "low",
+            "allow"
+        ],
+        "planner.execute": [
+            "medium",
+            "allow"
+        ],
+        "guard.check": [
+            "low",
+            "allow"
+        ],
+        "context.build": [
+            "low",
+            "allow"
+        ],
+        "scheduler.manage": [
+            "low",
+            "allow"
+        ],
+        "intent.classify": [
+            "low",
+            "allow"
+        ],
+        "approval.manage": [
+            "low",
+            "allow"
+        ]
+    },
+    "protected_processes": [
+        "system",
+        "idle",
+        "csrss",
+        "wininit",
+        "winlogon",
+        "smss",
+        "services",
+        "lsass",
+        "svchost",
+        "registry",
+        "memcompression",
+        "memory compression",
+        "dwm",
+        "fontdrvhost",
+        "windeploy"
+    ]
+}

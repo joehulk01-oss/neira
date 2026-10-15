@@ -1,0 +1,13 @@
+[
+  {
+    "instance_id": "e6f832f9",
+    "browser_name": "chrome",
+    "browser_version": "154.0.0.0",
+    "extension_version": "0.3.2",
+    "label": "",
+    "session_count": 0,
+    "connected_at_ms": 1790870458762,
+    "version_skew": false,
+    "extension_protocol_version": "1.3"
+  }
+]

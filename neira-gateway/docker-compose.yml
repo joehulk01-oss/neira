@@ -1,0 +1,32 @@
+# Neira Gateway di VPS — gateway (relay) + Caddy (HTTPS otomatis Let's Encrypt)
+# Pakai:  cp .env.example .env  lalu  docker compose up -d
+services:
+  gateway:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      GATEWAY_DATA_DIR: /app/data
+    volumes:
+      - ./data:/app/data
+    expose:
+      - "8765"
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - gateway
+
+volumes:
+  caddy_data:
+  caddy_config:

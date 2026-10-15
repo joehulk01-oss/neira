@@ -1,0 +1,23 @@
+# shutdown_routine.yaml — Blueprint Tahap 6
+# Persiapan matam: lihat apa yang jalan → catat kondisi → tutup aplikasi aktif.
+# Langkah terakhir (app.close) ber-risk HIGH → orchestrator akan berhenti di
+# situ dan meminta konfirmasi user (ini MEMANG disengaja, bukan bug).
+name: shutdown_routine
+description: Persiapan matam — snapshot, daftar jendela, lalu tutup aplikasi (butuh konfirmasi)
+risk_level: high
+steps:
+  - skill: computer_awareness
+    params: {cmd: snapshot}
+    policy_action: awareness.snapshot
+    expect: "snapshot"
+  - skill: window_manager
+    params: {cmd: list}
+    policy_action: window.list
+    expect: "jendela"
+  - skill: metrics
+    params: {cmd: stats}
+    policy_action: metrics.stats
+    expect: "metrik"
+  - skill: app_manager
+    params: {action: list}
+    policy_action: app.list

@@ -1,0 +1,34 @@
+ok    bsk home writable              C:\Users\Has bin Hacked\.bsk
+N/A   agent skill up to date         no agent skill installed
+ok    daemon running                 pid 4284 at ws://127.0.0.1:52800 (sock \\.\pipe\bsk-daemon-82f8e8553584f262)
+ok    daemon local process identity  IPC peer PID matches daemon identity
+ok    protocol compatible            daemon protocol 1.3 (app 0.3.1)
+ok    extension connected            1 browser(s) connected
+ok    browser protocol compatible    all 1 online browser(s) are compatible with the daemon
+
+A new bsk version is available: 0.3.1 -> 0.3.2. The daemon will upgrade bsk automatically.
+
+status daemon:
+{
+  "daemon_version": "0.3.1",
+  "protocol_version": "1.3",
+  "pid": 4284,
+  "uptime_secs": 943,
+  "ws_port": 52800,
+  "sock_path": "\\\\.\\pipe\\bsk-daemon-82f8e8553584f262",
+  "browsers": [
+    {
+      "instance_id": "e6f832f9",
+      "browser_name": "chrome",
+      "browser_version": "154.0.0.0",
+      "extension_version": "0.3.2",
+      "label": "",
+      "session_count": 0,
+      "connected_at_ms": 1790870458762,
+      "version_skew": false,
+      "extension_protocol_version": "1.3"
+    }
+  ],
+  "sessions": [],
+  "version_skew_browsers": []
+}

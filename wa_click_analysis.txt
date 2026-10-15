@@ -1,0 +1,24 @@
+
+=== ANALISIS TEKNIS KEGAGALAN SCREEN_CLICK PADA 'TIPS' (WHATSAPP WEB) ===
+
+1. PENYEBAB UTAMA (ROOT CAUSE):
+   - Ambiguity Kata 'Tips': Model visual (VLM/Grounding) sering mengira kata 'Tips' adalah teks panduan/UI watermark/placeholder ('Tips & Tricks', 'Security tips'), bukan nama entity kontak.
+   - WhatsApp Web Virtual DOM / Accessibility Tree: Chat list WhatsApp Web menggunakan div virtualized dengan aria-label berupa format gabungan: 'Chat list' -> cell dengan title atau aria-label='Tips: [pesan terakhir] [waktu]'. Teks 'Tips' sering berada di dalam sub-span tertutup.
+   - Visual Density & Contrast: Di dark mode atau list kontak yang padat, avatar bulat di sebelah kiri dan timestamp di sebelah kanan mengaburkan target klik utama jika deskripsi prompt visual tidak menyertakan jangkar spasial.
+
+2. REKOMENDASI SOLUSI BERLAPIS (MULTI-TIER RESOLUTION):
+   A. Pendekatan Prompt Visual yang Lebih Spesifik:
+      Alih-alih: "Contact name 'Tips' in WhatsApp web chat list"
+      Gunakan: "The chat row item or contact titled 'Tips' on the left sidebar chat list, click the profile name or avatar"
+
+   B. Pendekatan Keyboard Navigation / Search Shortcut (Paling Robust):
+      - WhatsApp Web memiliki shortcut resmi: Ctrl + Alt + / (atau klik search bar WhatsApp Web)
+      - Ketik 'Tips'
+      - Tekan Enter atau Down Arrow + Enter. Ini 100% tahan perubahan DOM dan tidak bergantung pada visual model.
+
+   C. Pendekatan DOM / DevTools / Playwright (Jika Menggunakan Web Engine Terotomasi):
+      - Selector CSS: div[role='gridcell'] span[title='Tips'], div[role='listitem'] span[title='Tips']
+      - XPath: //span[@title='Tips'] atau //span[text()='Tips']/ancestor::div[@role='listitem']
+
+3. LANGKAH PENERAPAN DI SKILL NEIRA:
+   Tambahkan fallback rule: jika screen_click gagal pada contact name WhatsApp, arahkan otomatis ke kotak pencarian obrolan (Search bar WA Web) -> ketik nama kontak -> Enter.

@@ -1,0 +1,19 @@
+# morning_briefing.yaml — Blueprint Tahap 6 (workflow pertama)
+# Ringkasan pagi: kondisi PC + kondisi memory + laporan kejujuran metrik.
+# Semua langkah read-only & offline — tidak ada langkah berisiko.
+name: morning_briefing
+description: Ringkasan pagi — kondisi PC, kesehatan memory, laporan metrik
+risk_level: low
+steps:
+  - skill: computer_awareness
+    params: {cmd: snapshot}
+    policy_action: awareness.snapshot
+    expect: "snapshot"
+  - skill: memory_compaction
+    params: {cmd: analyze}
+    policy_action: memory.analyze
+    expect: "memory"
+  - skill: metrics
+    params: {cmd: stats}
+    policy_action: metrics.stats
+    expect: "metrik"

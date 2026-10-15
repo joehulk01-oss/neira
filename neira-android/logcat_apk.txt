@@ -1,0 +1,14 @@
+--------- beginning of crash
+09-29 10:52:10.019  5735  5735 E AndroidRuntime: FATAL EXCEPTION: main
+09-29 10:52:10.019  5735  5735 E AndroidRuntime: Process: com.sentryapplications.alarmclock, PID: 5735
+09-29 10:52:10.019  5735  5735 E AndroidRuntime: android.app.RemoteServiceException$CannotDeliverBroadcastException: can't deliver broadcast
+09-29 10:52:10.019  5735  5735 E AndroidRuntime: 	at android.app.ActivityThread.throwRemoteServiceException(ActivityThread.java:2101)
+09-29 10:52:10.019  5735  5735 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mthrowRemoteServiceException(ActivityThread.java:0)
+09-29 10:52:10.019  5735  5735 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2368)
+09-29 10:52:10.019  5735  5735 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+09-29 10:52:10.019  5735  5735 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:201)
+09-29 10:52:10.019  5735  5735 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:288)
+09-29 10:52:10.019  5735  5735 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8194)
+09-29 10:52:10.019  5735  5735 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+09-29 10:52:10.019  5735  5735 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:703)
+09-29 10:52:10.019  5735  5735 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:911)

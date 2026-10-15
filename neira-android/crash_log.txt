@@ -1,0 +1,364 @@
+--------- beginning of system
+09-27 13:12:45.129 I/ActivityManager( 1423): Start proc 5369:com.hoffnung:remote/u0a167 for service {com.hoffnung/com.hoffnung.remote.RemoteService}
+09-27 13:12:45.145 I/ActivityManager( 1423): Start proc 5383:com.whatsapp/u999a225 for service {com.whatsapp/androidx.work.impl.background.systemjob.SystemJobService}
+09-27 13:12:48.290 I/ActivityManager( 1423): Start proc 5546:com.facebook.katana:fdidsync/u999a204 for broadcast {com.facebook.katana/com.facebook.fdidlite.FDIDSyncLiteReceiver}
+09-27 13:12:48.507 I/ActivityManager( 1423): Killing 1829:com.google.android.googlequicksearchbox:search/u0a116 (adj 935): empty #17
+09-27 13:13:09.673 I/ActivityManager( 1423): forceStop Package:com.neira.remote from pid:5722 uid:2000 Caller:com.android.server.am.ActivityManagerShellCommand.runForceStop:1193 com.android.server.am.ActivityManagerShellCommand.onCommand:266 com.android.server.am.UnisocActivityManagerShellCommand.onCommand:70 com.android.modules.utils.BasicShellCommandHandler.exec:97 android.os.ShellCommand.exec:38 com.android.server.am.UnisocActivityManagerService.onShellCommand:152 
+09-27 13:13:09.676 I/ActivityManager( 1423): Force stopping com.neira.remote appid=10532 user=0: from pid 5722
+09-27 13:13:09.679 I/ActivityManager( 1423): Killing 5049:com.neira.remote/u0a532 (adj 0): stop com.neira.remote due to from pid 5722
+09-27 13:13:09.683 I/ActivityManager( 1423): Killing 5086:com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u0a532i262 (adj 0): isolated not needed
+09-27 13:13:09.726 I/ActivityManager( 1423): Applaunch form com.neira.remote to com.transsion.itel.launcher
+09-27 13:13:09.737 W/ActivityManager( 1423): Invalid packageName: com.neira.remote
+09-27 13:13:09.769 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:09.769 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@c2ab6cc
+09-27 13:13:09.779 W/ActivityManager( 1423): setHasOverlayUi called on unknown pid: 5049
+09-27 13:13:09.785 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:09.796 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@5f71364
+09-27 13:13:09.831 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:09.845 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@8a18b2c
+09-27 13:13:09.855 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:09.855 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@e105ed7
+09-27 13:13:09.862 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:09.862 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@474a830
+09-27 13:13:09.870 W/ActivityManager( 1423): Unable to launch app com.amazon.avod.thirdpartyclient/10935 for service Intent { cmp=com.amazon.avod.thirdpartyclient/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:09.870 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@194d48
+09-27 13:13:09.890 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:09.890 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@35d76d5
+09-27 13:13:09.897 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/com.facebook.pushlite.PushLiteLollipopJobService }: AutoStart Limit
+09-27 13:13:09.897 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@750cfb6
+09-27 13:13:09.902 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:09.903 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@8b7fe90
+09-27 13:13:09.909 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:09.909 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@94673bc
+09-27 13:13:09.919 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:09.920 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@6022943
+09-27 13:13:09.923 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:09.924 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@94169f
+09-27 13:13:09.929 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:09.929 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@12d7dbb
+09-27 13:13:09.933 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:09.933 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@82c3a97
+09-27 13:13:09.937 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:09.937 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@3efe933
+09-27 13:13:09.942 W/ActivityManager( 1423): Unable to launch app com.amazon.avod.thirdpartyclient/10935 for service Intent { cmp=com.amazon.avod.thirdpartyclient/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:09.942 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@ccc7cee
+09-27 13:13:11.107 I/ActivityManager( 1423): Start proc 5779:com.neira.remote/u0a532 for next-top-activity {com.neira.remote/com.neira.remote.MainActivity}
+09-27 13:13:11.129 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:11.129 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@9dbe081
+09-27 13:13:11.137 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/com.facebook.pushlite.PushLiteLollipopJobService }: AutoStart Limit
+09-27 13:13:11.138 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@36503bd
+09-27 13:13:11.152 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:11.158 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@110fa5f
+09-27 13:13:11.181 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:11.181 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@93fc7ae
+09-27 13:13:11.205 I/ActivityManager( 1423): Applaunch form com.transsion.itel.launcher to com.neira.remote
+09-27 13:13:11.239 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:11.239 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@5ad010c
+09-27 13:13:11.249 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:11.249 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@8af21f8
+09-27 13:13:11.262 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:11.262 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@5eb6f0d
+09-27 13:13:11.270 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:11.271 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@42cb50e
+09-27 13:13:11.277 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:11.277 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@76c72c5
+09-27 13:13:11.282 W/ActivityManager( 1423): Unable to launch app com.amazon.avod.thirdpartyclient/10935 for service Intent { cmp=com.amazon.avod.thirdpartyclient/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:11.283 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@7ae57e6
+09-27 13:13:11.491 I/ActivityManager( 1423): Start proc 5828:com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u0i263 for  {com.neira.remote/org.chromium.content.app.SandboxedProcessService0:0}
+09-27 13:13:11.531 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:11.532 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@c30e3a0
+09-27 13:13:11.537 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/com.facebook.pushlite.PushLiteLollipopJobService }: AutoStart Limit
+09-27 13:13:11.537 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@6d386b8
+09-27 13:13:11.543 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:11.543 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@2965664
+09-27 13:13:11.549 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:11.549 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@4ad4cc9
+09-27 13:13:12.043 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:12.043 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@ccc854a
+09-27 13:13:12.047 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:12.048 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@1d5ac16
+09-27 13:13:12.057 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:12.060 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@27873a2
+09-27 13:13:12.069 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:12.069 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@3c5b48f
+09-27 13:13:12.080 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:12.080 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@5ac54a1
+09-27 13:13:12.088 W/ActivityManager( 1423): Unable to launch app com.amazon.avod.thirdpartyclient/10935 for service Intent { cmp=com.amazon.avod.thirdpartyclient/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:12.088 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@a9f39b4
+09-27 13:13:12.097 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:12.097 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@2f070aa
+09-27 13:13:12.104 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/com.facebook.pushlite.PushLiteLollipopJobService }: AutoStart Limit
+09-27 13:13:12.104 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@3ced76
+09-27 13:13:12.109 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:12.109 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@9026b02
+09-27 13:13:12.114 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:12.115 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@b0354e
+09-27 13:13:23.092 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:23.094 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@6b95af8
+09-27 13:13:23.100 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:23.101 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@f72dfc2
+09-27 13:13:23.109 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:23.109 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@39dae3c
+09-27 13:13:23.118 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:23.119 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@af9fb41
+09-27 13:13:23.132 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:23.132 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@8c6bd72
+09-27 13:13:23.138 W/ActivityManager( 1423): Unable to launch app com.amazon.avod.thirdpartyclient/10935 for service Intent { cmp=com.amazon.avod.thirdpartyclient/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:23.138 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@f51d179
+09-27 13:13:23.539 I/ActivityManager( 1423): Applaunch form com.neira.remote to com.transsion.itel.launcher
+09-27 13:13:23.601 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:23.615 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@f7631c9
+09-27 13:13:23.629 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/com.facebook.pushlite.PushLiteLollipopJobService }: AutoStart Limit
+09-27 13:13:23.629 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@fbd86e8
+09-27 13:13:23.636 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:23.637 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@1b02c32
+09-27 13:13:23.647 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:23.647 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@677172c
+09-27 13:13:23.677 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:23.678 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@8bd8dcf
+09-27 13:13:23.690 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:23.690 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@92f37eb
+09-27 13:13:23.765 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:23.765 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@97001f4
+09-27 13:13:23.772 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:23.772 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@b854960
+09-27 13:13:23.780 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:23.781 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@1e59b8c
+09-27 13:13:23.787 W/ActivityManager( 1423): Unable to launch app com.amazon.avod.thirdpartyclient/10935 for service Intent { cmp=com.amazon.avod.thirdpartyclient/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:23.787 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@193d0b7
+09-27 13:13:24.614 I/ActivityManager( 1423): Applaunch form com.transsion.itel.launcher to com.worldance.drama
+09-27 13:13:24.663 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:24.663 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@3278d16
+09-27 13:13:24.668 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/com.facebook.pushlite.PushLiteLollipopJobService }: AutoStart Limit
+09-27 13:13:24.668 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@a9b6533
+09-27 13:13:24.677 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:24.677 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@b1d218f
+09-27 13:13:24.681 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:24.681 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@4face08
+09-27 13:13:24.690 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:24.690 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@399a99e
+09-27 13:13:24.696 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:24.696 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@c72c1aa
+09-27 13:13:24.699 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:24.699 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@e134e76
+09-27 13:13:24.706 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:24.706 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@45ddc02
+09-27 13:13:24.709 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:24.709 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@7ec2d49
+09-27 13:13:24.713 W/ActivityManager( 1423): Unable to launch app com.amazon.avod.thirdpartyclient/10935 for service Intent { cmp=com.amazon.avod.thirdpartyclient/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:24.713 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@ee6c87c
+09-27 13:13:25.228 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:25.228 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@8d05ac2
+09-27 13:13:25.232 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/com.facebook.pushlite.PushLiteLollipopJobService }: AutoStart Limit
+09-27 13:13:25.233 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@5cd610e
+09-27 13:13:25.245 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:25.245 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@682801a
+09-27 13:13:25.253 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:25.253 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@f3883e6
+09-27 13:13:25.281 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:25.282 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@96cee17
+09-27 13:13:25.297 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:25.297 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@74854b3
+09-27 13:13:25.306 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:25.306 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@74c1d9c
+09-27 13:13:25.314 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:25.314 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@63d8521
+09-27 13:13:25.318 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:25.318 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@f648434
+09-27 13:13:25.322 W/ActivityManager( 1423): Unable to launch app com.amazon.avod.thirdpartyclient/10935 for service Intent { cmp=com.amazon.avod.thirdpartyclient/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:25.323 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@78fd0a3
+09-27 13:13:25.434 W/ActivityManager( 1423): Slow operation: 64ms so far, now at startProcess: done updating battery stats
+09-27 13:13:25.434 W/ActivityManager( 1423): Slow operation: 64ms so far, now at startProcess: building log message
+09-27 13:13:25.434 I/ActivityManager( 1423): Start proc 6054:com.transsion.dtsaudio/u0a165 for service {com.transsion.dtsaudio/com.transsion.dtsaudio.service.ChangeContentModeService}
+09-27 13:13:25.434 W/ActivityManager( 1423): Slow operation: 64ms so far, now at startProcess: starting to update pids map
+09-27 13:13:25.439 W/ActivityManager( 1423): Slow operation: 69ms so far, now at startProcess: done updating pids map
+09-27 13:13:25.525 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:25.525 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@e3a5c83
+09-27 13:13:25.553 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/com.facebook.pushlite.PushLiteLollipopJobService }: AutoStart Limit
+09-27 13:13:25.553 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@9eeaa8a
+09-27 13:13:25.571 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:25.573 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@a9200e2
+09-27 13:13:25.584 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:25.587 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@e9aad65
+09-27 13:13:33.209 I/ActivityManager( 1423): Applaunch form com.worldance.drama to com.android.chrome
+09-27 13:13:33.239 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:33.239 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@4cad5e0
+09-27 13:13:33.248 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:33.248 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@b37700c
+09-27 13:13:33.261 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:33.262 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@df180f8
+09-27 13:13:33.272 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:33.272 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@74120d
+09-27 13:13:33.283 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:33.283 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@6af7710
+09-27 13:13:33.293 W/ActivityManager( 1423): Unable to launch app com.amazon.avod.thirdpartyclient/10935 for service Intent { cmp=com.amazon.avod.thirdpartyclient/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:33.293 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@f53162f
+09-27 13:13:33.367 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:33.384 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@a8733b3
+09-27 13:13:33.394 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/com.facebook.pushlite.PushLiteLollipopJobService }: AutoStart Limit
+09-27 13:13:33.395 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@e236e7a
+09-27 13:13:33.406 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:33.406 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@be83a07
+09-27 13:13:33.410 I/ActivityManager( 1423): Start proc 6306:com.transsion.chromecustomization/u0a74 for content provider {com.transsion.chromecustomization/com.transsion.chromecustomization.TaplaChromeContentProvider}
+09-27 13:13:33.424 W/ActivityManager( 1423): Slow operation: 53ms so far, now at startProcess: done updating pids map
+09-27 13:13:33.444 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:33.444 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@5bbee59
+09-27 13:13:33.823 I/ActivityManager( 1423): Start proc 6355:com.android.chrome:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:20/u0ai20 for  {com.android.chrome/org.chromium.content.app.SandboxedProcessService0:20}
+09-27 13:13:34.776 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:34.776 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@f7f7408
+09-27 13:13:34.797 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:34.798 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@9bc8b4
+09-27 13:13:34.807 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:34.807 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@586bc20
+09-27 13:13:34.823 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:34.824 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@46b7a4c
+09-27 13:13:34.836 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:34.836 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@bed6f9b
+09-27 13:13:34.852 W/ActivityManager( 1423): Unable to launch app com.amazon.avod.thirdpartyclient/10935 for service Intent { cmp=com.amazon.avod.thirdpartyclient/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:34.853 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@288e476
+09-27 13:13:34.902 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:34.902 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@4389f5a
+09-27 13:13:34.912 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/com.facebook.pushlite.PushLiteLollipopJobService }: AutoStart Limit
+09-27 13:13:34.913 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@d515726
+09-27 13:13:34.927 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:34.928 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@1ebbfb2
+09-27 13:13:34.940 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:34.940 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@55224fe
+09-27 13:13:39.347 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:39.347 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@72c7c25
+09-27 13:13:39.351 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:39.352 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@cdb5a1
+09-27 13:13:39.359 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:39.360 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@ef0add
+09-27 13:13:39.366 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:39.367 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@3d677d9
+09-27 13:13:39.369 I/ActivityManager( 1423): Applaunch form com.android.chrome to com.worldance.drama
+09-27 13:13:39.373 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:39.373 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@32e7a76
+09-27 13:13:39.386 W/ActivityManager( 1423): Unable to launch app com.amazon.avod.thirdpartyclient/10935 for service Intent { cmp=com.amazon.avod.thirdpartyclient/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:39.386 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@55a5350
+09-27 13:13:39.456 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:39.457 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@6c9725f
+09-27 13:13:39.465 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/com.facebook.pushlite.PushLiteLollipopJobService }: AutoStart Limit
+09-27 13:13:39.466 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@6948f98
+09-27 13:13:39.473 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:39.474 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@40b6f62
+09-27 13:13:39.486 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:39.486 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@d4d55e5
+09-27 13:13:40.258 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:40.258 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@77504c9
+09-27 13:13:40.276 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:40.277 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@d402485
+09-27 13:13:40.298 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:40.298 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@ae38401
+09-27 13:13:40.315 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:40.315 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@4035f3d
+09-27 13:13:40.337 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:40.337 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@8204a00
+09-27 13:13:40.353 W/ActivityManager( 1423): Unable to launch app com.amazon.avod.thirdpartyclient/10935 for service Intent { cmp=com.amazon.avod.thirdpartyclient/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:13:40.354 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@e3079df
+09-27 13:13:45.536 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:45.536 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@5f2a1ea
+09-27 13:13:45.545 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/com.facebook.pushlite.PushLiteLollipopJobService }: AutoStart Limit
+09-27 13:13:45.545 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@150f2b6
+09-27 13:13:45.555 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:45.556 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@9718442
+09-27 13:13:45.563 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:13:45.563 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@d17a28e
+09-27 13:13:47.004 I/ActivityManager( 1423): Killing 1924:com.google.android.googlequicksearchbox:googleapp/u0a116 (adj 985): empty #17
+09-27 13:14:07.984 I/ActivityManager( 1423): Start proc 6695:com.google.android.cellbroadcastreceiver/u0a187 for broadcast {com.google.android.cellbroadcastreceiver/com.android.cellbroadcastreceiver.CellBroadcastReceiver}
+09-27 13:14:08.292 I/ActivityManager( 1423): Killing 3010:com.transsion.ossettingsext/1000 (adj 975): empty #17
+09-27 13:14:08.330 I/ActivityManager( 1423): Killing 3079:com.android.vending:background/u0a114 (adj 985): empty #17
+09-27 13:14:09.928 I/ActivityManager( 1423): Killing 6355:com.android.chrome:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:20/u0a125i-8980 (adj 0): isolated not needed
+09-27 13:15:30.037 I/ActivityManager( 1423): Start proc 7362:com.google.android.apps.turbo/u0a109 for broadcast {com.google.android.apps.turbo/com.google.android.apps.turbo.nudges.broadcasts.BatteryStatusChangedReceiver}
+09-27 13:15:30.274 I/ActivityManager( 1423): Killing 3144:com.google.android.apps.nbu.files/u0a104 (adj 915): empty #17
+09-27 13:15:42.164 I/ActivityManager( 1423): Start proc 7404:com.talpa.hibrowser/u0a88 for service {com.talpa.hibrowser/androidx.work.impl.background.systemjob.SystemJobService}
+09-27 13:17:06.337 I/ActivityManager( 1423): Killing 3219:com.transsion.childmode/1000 (adj 985): empty #17
+09-27 13:17:08.385 I/ActivityManager( 1423): Applaunch form com.worldance.drama to com.android.chrome
+09-27 13:17:08.391 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:17:08.391 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@24aa132
+09-27 13:17:08.421 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:08.436 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@67d9e7e
+09-27 13:17:08.474 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:08.474 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@3c3c43a
+09-27 13:17:08.495 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:08.501 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@f6f0a63
+09-27 13:17:08.520 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:08.520 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@8f162db
+09-27 13:17:08.528 W/ActivityManager( 1423): Unable to launch app com.amazon.avod.thirdpartyclient/10935 for service Intent { cmp=com.amazon.avod.thirdpartyclient/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:17:08.528 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@7b7bd24
+09-27 13:17:08.558 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:08.558 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@9d1f4c0
+09-27 13:17:08.586 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/com.facebook.pushlite.PushLiteLollipopJobService }: AutoStart Limit
+09-27 13:17:08.586 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@b1f797
+09-27 13:17:08.602 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:08.602 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@116428f
+09-27 13:17:08.611 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:08.611 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@c086fb4
+09-27 13:17:08.644 I/ActivityManager( 1423): Start proc 7983:com.android.chrome:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:21/u0ai21 for  {com.android.chrome/org.chromium.content.app.SandboxedProcessService0:21}
+09-27 13:17:09.370 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:17:09.370 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@50817c5
+09-27 13:17:09.375 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:09.375 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@4576b41
+09-27 13:17:09.387 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:09.388 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@fee7a7d
+09-27 13:17:09.393 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:09.393 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@8ed4179
+09-27 13:17:09.402 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:09.402 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@aed4e6c
+09-27 13:17:09.406 W/ActivityManager( 1423): Unable to launch app com.amazon.avod.thirdpartyclient/10935 for service Intent { cmp=com.amazon.avod.thirdpartyclient/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:17:09.406 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@11fea3b
+09-27 13:17:09.505 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:09.506 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@5b6687a
+09-27 13:17:09.519 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/com.facebook.pushlite.PushLiteLollipopJobService }: AutoStart Limit
+09-27 13:17:09.519 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@4329246
+09-27 13:17:09.530 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:09.530 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@5f58cd2
+09-27 13:17:09.539 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:09.539 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@57ba41e
+09-27 13:17:19.156 I/ActivityManager( 1423): Applaunch form com.android.chrome to com.worldance.drama
+09-27 13:17:19.202 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:17:19.203 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@bdbd4b1
+09-27 13:17:19.221 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:19.221 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@b5523b3
+09-27 13:17:19.300 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:19.300 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@6e038cc
+09-27 13:17:19.314 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:19.314 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@43e15b8
+09-27 13:17:19.325 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:19.325 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@d9ad564
+09-27 13:17:19.346 W/ActivityManager( 1423): Unable to launch app com.amazon.avod.thirdpartyclient/10935 for service Intent { cmp=com.amazon.avod.thirdpartyclient/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:17:19.346 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@323c1a6
+09-27 13:17:19.358 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:19.358 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@35133f5
+09-27 13:17:19.363 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/com.facebook.pushlite.PushLiteLollipopJobService }: AutoStart Limit
+09-27 13:17:19.364 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@2b5e056
+09-27 13:17:19.368 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:19.368 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@938a42e
+09-27 13:17:19.380 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:19.381 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@2250b06
+09-27 13:17:19.788 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:17:19.789 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@3e1ec20
+09-27 13:17:19.797 W/ActivityManager( 1423): Unable to launch app com.appspace.fast.secure.vpn/10243 for service Intent { cmp=com.appspace.fast.secure.vpn/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:19.797 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@549aa4c
+09-27 13:17:19.813 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:19.813 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@5e98b11
+09-27 13:17:19.818 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:19.818 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@61e8202
+09-27 13:17:19.822 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:19.822 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@8f6bc4e
+09-27 13:17:19.829 W/ActivityManager( 1423): Unable to launch app com.amazon.avod.thirdpartyclient/10935 for service Intent { cmp=com.amazon.avod.thirdpartyclient/com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService }: AutoStart Limit
+09-27 13:17:19.829 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@1d69305
+09-27 13:17:20.573 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:20.574 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@14ed8b9
+09-27 13:17:20.580 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/com.facebook.pushlite.PushLiteLollipopJobService }: AutoStart Limit
+09-27 13:17:20.580 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@c7b4775
+09-27 13:17:20.587 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:20.587 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@5c5e5f1
+09-27 13:17:20.592 W/ActivityManager( 1423): Unable to launch app com.facebook.stella/10817 for service Intent { cmp=com.facebook.stella/androidx.work.impl.background.systemjob.SystemJobService }: AutoStart Limit
+09-27 13:17:20.593 W/ActivityManager( 1423): Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@741f02d
+09-27 13:17:49.662 I/ActivityManager( 1423): Killing 7983:com.android.chrome:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:21/u0a125i-8979 (adj 0): isolated not needed
+09-27 13:23:30.001 I/ActivityManager( 1423): Start proc 9799:com.ss.android.ugc.trill/u0a221 for broadcast {com.ss.android.ugc.trill/com.google.firebase.iid.FirebaseInstanceIdReceiver}
+09-27 13:23:31.323 I/ActivityManager( 1423): Killing 3236:com.google.android.webview:webview_service/u0a130 (adj 975): empty #17
+09-27 13:24:08.523 I/ActivityManager( 1423): PendingStartActivityUids startActivity to updateOomAdj delay:1144ms, uid:10828
+09-27 13:24:09.641 I/ActivityManager( 1423): Process com.ss.android.ugc.trill (pid 9799) has died: cch+15 CEM 

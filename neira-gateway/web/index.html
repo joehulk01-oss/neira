@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0a0f1f">
+    <title>Neira — Remote</title>
+    <style>
+        :root {
+            --bg: #0a0f1f;
+            --panel: rgba(255, 255, 255, 0.06);
+            --line: rgba(255, 255, 255, 0.10);
+            --txt: #e9eefb;
+            --dim: #8fa3c8;
+            --pri: #7ee787;
+            --cyan: #00e5ff;
+            --err: #ff6b6b;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(900px 480px at 50% -8%, #17223f 0%, rgba(10, 15, 31, 0) 60%),
+                var(--bg);
+            color: var(--txt);
+            font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* ── banner privasi ─────────────────────────────────────── */
+        .privacy {
+            text-align: center;
+            font-size: 12px;
+            color: var(--pri);
+            background: rgba(126, 231, 135, 0.08);
+            border-bottom: 1px solid rgba(126, 231, 135, 0.18);
+            padding: 7px 12px;
+            flex: none;
+        }
+
+        /* ── brand ──────────────────────────────────────────────── */
+        .brand {
+            text-align: center;
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: var(--dim);
+            padding: 10px 0 0;
+            flex: none;
+        }
+
+        /* ── sapaan ─────────────────────────────────────────────── */
+        #greeting {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 600;
+            margin: 14px 20px 6px;
+            flex: none;
+        }
+
+        /* ── avatar wajah robot ─────────────────────────────────── */
+        #avatar {
+            width: 110px;
+            height: 110px;
+            margin: 10px auto 0;
+            position: relative;
+            display: grid;
+            place-items: center;
+            flex: none;
+        }
+
+        #avatar::before {
+            content: "";
+            position: absolute;
+            inset: -26px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(126, 231, 135, 0.22) 0%, rgba(126, 231, 135, 0) 65%);
+            transition: opacity .4s;
+        }
+
+        .face {
+            width: 86px;
+            height: 86px;
+            border-radius: 26px;
+            position: relative;
+            background: linear-gradient(160deg, #ffffff 0%, #d4e0f7 100%);
+            box-shadow:
+                inset 0 -6px 14px rgba(80, 110, 180, 0.25),
+                0 8px 30px rgba(126, 231, 135, 0.14),
+                0 0 50px rgba(255, 255, 255, 0.12);
+            transition: box-shadow .3s;
+        }
+
+        .eye {
+            position: absolute;
+            top: 30px;
+            width: 12px;
+            height: 17px;
+            border-radius: 7px;
+            background: #0a0f1f;
+            box-shadow: 0 0 6px rgba(10, 15, 31, 0.5);
+            animation: blink 5s infinite;
+        }
+
+        .eye.l {
+            left: 21px;
+        }
+
+        .eye.r {
+            right: 21px;
+        }
+
+        .mouth {
+            position: absolute;
+            bottom: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 8px;
+            border-radius: 5px;
+            background: var(--pri);
+            box-shadow: 0 0 12px rgba(126, 231, 135, 0.8);
+        }
+
+        @keyframes blink {
+
+            0%,
+            94%,
+            100% {
+                transform: scaleY(1);
+            }
+
+            96%,
+            98% {
+                transform: scaleY(0.12);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.04);
+            }
+        }
+
+        /* status "Listening" di bawah avatar */
+        #status {
+            text-align: center;
+            font-size: 13px;
+            color: var(--dim);
+            margin: 10px 16px 0;
+            min-height: 20px;
+            flex: none;
+        }
+
+        body.mic #status {
+            color: var(--pri);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        body.mic .face {
+            animation: pulse 1.6s ease-in-out infinite;
+            box-shadow: inset 0 -6px 14px rgba(80, 110, 180, .25), 0 8px 34px rgba(126, 231, 135, .45), 0 0 60px rgba(126, 231, 135, .35);
+        }
+
+        body.mic #avatar::before {
+            opacity: 1.6;
+        }
+
+        body.mic .mouth {
+            animation: talk .5s ease-in-out infinite;
+        }
+
+        @keyframes talk {
+
+            0%,
+            100% {
+                width: 30px;
+                height: 8px;
+            }
+
+            50% {
+                width: 18px;
+                height: 12px;
+            }
+        }
+
+        /* ── panel pairing ──────────────────────────────────────── */
+        #pair {
+            display: none;
+            gap: 8px;
+            justify-content: center;
+            margin: 14px 16px 0;
+            flex: none;
+        }
+
+        #pair input {
+            width: 150px;
+            text-align: center;
+            font-size: 20px;
+            letter-spacing: 10px;
+            padding: 10px 4px 10px 14px;
+            color: var(--txt);
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            outline: none;
+        }
+
+        #pair button {
+            padding: 0 20px;
+            border: 0;
+            border-radius: 999px;
+            background: var(--pri);
+            color: #06210f;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* ── feed chat ──────────────────────────────────────────── */
+        #log {
+            flex: 1;
+            min-height: 0;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 16px 14px 8px;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+        }
+
+        .msg {
+            align-self: flex-start;
+            max-width: 82%;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 16px 16px 16px 6px;
+            padding: 9px 13px;
+            font-size: 14px;
+            word-break: break-word;
+            white-space: pre-wrap;
+        }
+
+        .msg.me {
+            align-self: flex-end;
+            background: rgba(0, 229, 255, 0.10);
+            border-color: rgba(0, 229, 255, 0.28);
+            border-radius: 16px 16px 6px 16px;
+        }
+
+        .msg.dim {
+            color: var(--dim);
+            font-size: 13px;
+        }
+
+        .msg.err {
+            color: var(--err);
+            border-color: rgba(255, 107, 107, 0.35);
+            background: rgba(255, 107, 107, 0.08);
+        }
+
+        /* ── bar bawah pil ──────────────────────────────────────── */
+        form {
+            flex: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 4px 12px;
+            padding: 7px 8px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        #cmd {
+            flex: 1;
+            min-width: 0;
+            background: transparent;
+            border: 0;
+            outline: none;
+            color: var(--txt);
+            font: inherit;
+            padding: 0 8px;
+        }
+
+        #cmd::placeholder {
+            color: var(--dim);
+        }
+
+        .rnd {
+            flex: none;
+            width: 42px;
+            height: 42px;
+            border: 0;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 17px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.10);
+            color: var(--txt);
+            transition: background .2s, transform .1s;
+        }
+
+        .rnd:active {
+            transform: scale(0.92);
+        }
+
+        #micbtn.on {
+            background: var(--pri);
+            color: #06210f;
+            animation: pulse 1.4s ease-in-out infinite;
+        }
+
+        #sendbtn {
+            background: var(--cyan);
+            color: #02202b;
+        }
+
+        /* ── footer ─────────────────────────────────────────────── */
+        footer {
+            flex: none;
+            text-align: center;
+            font-size: 11px;
+            color: var(--dim);
+            padding: 8px 16px calc(10px + env(safe-area-inset-bottom));
+        }
+
+        /* ── PC offline banner ──────────────────────────────────── */
+        #pcbanner {
+            flex: none;
+            margin: 0 12px 4px;
+            padding: 8px 14px;
+            border-radius: 10px;
+            background: rgba(255, 60, 60, 0.18);
+            border: 1px solid rgba(255, 80, 80, 0.4);
+            color: #ff8080;
+            font-size: 13px;
+            text-align: center;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* ── Settings panel ─────────────────────────────────────── */
+        #settingspanel {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 24px 20px calc(24px + env(safe-area-inset-bottom));
+            background: rgba(8, 14, 26, 0.97);
+            backdrop-filter: blur(16px);
+            overflow-y: auto;
+        }
+
+        .sp-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--txt);
+            margin-bottom: 8px;
+        }
+
+        .sp-label {
+            font-size: 12px;
+            color: var(--dim);
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            margin-top: 4px;
+        }
+
+        .sp-hint {
+            font-size: 12px;
+            color: var(--dim);
+            margin: 0;
+        }
+
+        .sp-input {
+            width: 100%;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            color: var(--txt);
+            font: inherit;
+            font-size: 15px;
+            padding: 10px 14px;
+            outline: none;
+        }
+
+        .sp-btn {
+            width: 100%;
+            padding: 12px;
+            border: 0;
+            border-radius: 10px;
+            font: inherit;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            background: var(--pri);
+            color: #06210f;
+            transition: opacity .2s;
+        }
+
+        .sp-btn:active {
+            opacity: 0.75;
+        }
+
+        .sp-btn-sec {
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--txt);
+        }
+
+        .sp-btn-danger {
+            background: rgba(255, 60, 60, 0.25);
+            color: #ff8080;
+            border: 1px solid rgba(255, 80, 80, 0.3);
+        }
+
+        .sp-btn-close {
+            background: transparent;
+            color: var(--dim);
+            border: 1px solid var(--line);
+        }
+
+        .sp-divider {
+            height: 1px;
+            background: var(--line);
+            margin: 4px 0;
+        }
+
+        @media (max-height: 640px) {
+            #greeting {
+                font-size: 17px;
+                margin-top: 8px;
+            }
+
+            #avatar {
+                transform: scale(0.85);
+                margin-top: 2px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="privacy">🔒 Semua chat bersifat pribadi</div>
+    <div class="brand">◈ NEIRA — REMOTE</div>
+
+    <h1 id="greeting">👋 hai, ada yang bisa saya bantu hari ini?</h1>
+
+    <div id="avatar" aria-hidden="true">
+        <div class="face">
+            <span class="eye l"></span>
+            <span class="eye r"></span>
+            <span class="mouth"></span>
+        </div>
+    </div>
+
+    <div id="status">Menghubungkan...</div>
+
+    <div id="pair">
+        <input id="code" inputmode="numeric" maxlength="6" placeholder="000000">
+        <button id="pairbtn">PAIR</button>
+    </div>
+
+    <div id="pcbanner" style="display:none"></div>
+
+    <div id="log"></div>
+
+    <form id="form">
+        <input id="cmd" placeholder="Ketik perintah untuk Neira..." autocomplete="off">
+        <button type="button" class="rnd" id="imgbtn" title="Kirim gambar (paste/upload)">📎</button>
+        <input type="file" id="imgfile" accept="image/*" style="display:none">
+        <button type="button" class="rnd" id="micbtn" title="Mic HP → Neira">🎤</button>
+        <button type="submit" class="rnd" id="sendbtn" title="Kirim">➤</button>
+        <button type="button" class="rnd" id="clearbtn" title="Bersihkan log">✕</button>
+        <button type="button" class="rnd" id="settingsbtn" title="Pengaturan">⚙️</button>
+    </form>
+
+    <!-- Panel Settings inline -->
+    <div id="settingspanel" style="display:none">
+        <div class="sp-title">⚙️ Pengaturan Koneksi</div>
+
+        <label class="sp-label">Gateway URL</label>
+        <input id="sp-url" type="text" class="sp-input" placeholder="https://192.168.x.x:8000">
+        <button class="sp-btn" id="sp-savebtn">Simpan &amp; Reconnect</button>
+
+        <div class="sp-divider"></div>
+
+        <label class="sp-label">Pair Ulang</label>
+        <p class="sp-hint">Pairing bersifat PERMANEN — cukup sekali pair, lalu otomatis
+            masuk selamanya (ikut walau IP gateway berubah). Gunakan ini hanya
+            setelah logout atau device dicabut dari PC.</p>
+        <input id="sp-code" inputmode="numeric" maxlength="6" class="sp-input" placeholder="000000">
+        <button class="sp-btn sp-btn-sec" id="sp-pairbtn">Pair Ulang</button>
+
+        <div class="sp-divider"></div>
+
+        <button class="sp-btn sp-btn-danger" id="sp-forgetbtn">Hapus Semua Data &amp; Reset</button>
+        <button class="sp-btn sp-btn-danger" id="sp-logoutbtn">🚪 Logout — Cabut Pairing</button>
+        <button class="sp-btn sp-btn-close" id="sp-closebtn">Tutup</button>
+    </div>
+
+    <footer>Semua chat bersifat pribadi. Neira bisa membuat kesalahan — periksa info penting.</footer>
+
+    <script>
+        const $ = (id) => document.getElementById(id);
+        const params = new URLSearchParams(location.search);
+        /* ── Vault kredensial: di APK disimpan via native bridge (SharedPreferences
+              — TIDAK terikat origin, jadi aman saat IP gateway berubah); di browser
+              biasa fallback ke localStorage. Pair SEKALI → auto-login selamanya,
+              sampai user menekan LOGOUT. ── */
+        function nativeBridge() { return window.NeiraNative || null; }
+        function loadCreds() {
+            try {
+                const b = nativeBridge();
+                if (b && typeof b.getDeviceId === "function") {
+                    const id = String(b.getDeviceId() || "");
+                    const key = String(b.getDeviceKey() || "");
+                    if (id && key) return { id, key };
+                }
+            } catch { }
+            return {
+                id: localStorage.getItem("neira_device_id") || "",
+                key: localStorage.getItem("neira_device_key") || ""
+            };
+        }
+        function saveCreds(id, key) {
+            try {
+                const b = nativeBridge();
+                if (b && typeof b.saveDevice === "function") b.saveDevice(id, key);
+            } catch { }
+            localStorage.setItem("neira_device_id", id);
+            localStorage.setItem("neira_device_key", key);
+        }
+        function clearCreds() {
+            try {
+                const b = nativeBridge();
+                if (b && typeof b.clearDevice === "function") b.clearDevice();
+            } catch { }
+            localStorage.removeItem("neira_device_id");
+            localStorage.removeItem("neira_device_key");
+            device_id = device_key = "";
+        }
+        const _saved = loadCreds();
+        let device_id = _saved.id;
+        let device_key = _saved.key;
+        const token = params.get("token") || "";
+        const code = params.get("code") || "";
+        let ws;
+        let lastStatus = "Menghubungkan...";
+
+        function msg(type, payload) {
+            return JSON.stringify({
+                type, request_id: Math.random().toString(16).slice(2),
+                timestamp: new Date().toISOString(), payload: payload || {}
+            });
+        }
+
+        function setStatus(t) {
+            lastStatus = t;
+            $("status").textContent = micOn ? "Listening" : t;
+        }
+
+        function log(text, cls) {
+            const div = document.createElement("div");
+            div.className = "msg" + (cls ? " " + cls : "");
+            div.textContent = text;
+            $("log").appendChild(div);
+            $("log").scrollTop = $("log").scrollHeight;
+        }
+
+        /* ── alamat gateway SELALU = origin halaman ini (dinamis).
+              IP PC sering berubah (WiFi / hotspot HP / tether) — jangan simpan IP
+              di localStorage, supaya setelan tidak pernah "beda dengan gateway". ── */
+        function gatewayBase() {
+            return location.origin.replace(/\/+$/, "");
+        }
+
+        function wsBase() {
+            const b = gatewayBase();
+            return (b.startsWith("https") ? "wss://" : "ws://") + b.replace(/^https?:\/\//, "");
+        }
+
+        function connect() {
+            if (ws) { try { ws.onclose = null; ws.close(); } catch { } }
+            ws = new WebSocket(wsBase() + "/ws");
+            ws.onopen = () => {
+                if (token || code) {
+                    ws.send(msg("pair_request", {
+                        pairing_token: token, pairing_code: code,
+                        name: "Neira Remote", platform: navigator.userAgent.includes("Android") ? "android" : "web"
+                    }));
+                } else if (device_id && device_key) {
+                    ws.send(msg("authenticate", { device_id, device_key }));
+                } else {
+                    setStatus("Belum dipair — masukkan kode 6 digit dari PC.");
+                    $("pair").style.display = "flex";
+                }
+            };
+            ws.onmessage = (ev) => {
+                let m; try { m = JSON.parse(ev.data); } catch { return; }
+                const p = m.payload || {};
+                if (m.type === "pair_approved") {
+                    device_id = p.device_id; device_key = p.device_key;
+                    saveCreds(device_id, device_key);
+                    history.replaceState(null, "", location.pathname);
+                    $("pair").style.display = "none";
+                    $("settingspanel").style.display = "none";
+                    setStatus("Tersambung ✓");
+                } else if (m.type === "device_online") {
+                    if (p.role === "client" || !p.role) {
+                        // Ini konfirmasi untuk koneksi kita sendiri
+                        setStatus("Tersambung ✓");
+                    } else if (p.role === "pc") {
+                        // PC Neira baru connect / reconnect ke gateway
+                        setPcBanner(false);
+                        setStatus("Tersambung ✓ — Neira PC online");
+                        log("🟢 Neira PC terhubung ke gateway.", "dim");
+                    }
+                } else if (m.type === "device_offline") {
+                    if (p.role === "pc" || p.device_id === "neira-pc") {
+                        // PC Neira disconnect
+                        setPcBanner(true, "⚠️ Neira PC offline — perintah tidak dapat dikirim. Nyalakan Neira di PC.");
+                        setStatus("Neira PC offline");
+                        log("🔴 Neira PC terputus dari gateway.", "err");
+                    }
+                } else if (m.type === "log") {
+                    log((p.speaker ? p.speaker + ": " : "") + (p.text || JSON.stringify(p)));
+                } else if (m.type === "status") {
+                    log("status: " + (p.state || JSON.stringify(p)), "dim");
+                } else if (m.type === "pong") {
+                    /* heartbeat */
+                } else if (m.type === "error") {
+                    log("error: " + (p.error || JSON.stringify(p)), "err");
+                    if ((p.error || "").includes("Authentication failed")) {
+                        // Device key tidak valid — buang kredensial lama agar
+                        // reconnect tidak mengulang auth gagal terus-menerus.
+                        clearCreds();
+                        setStatus("Autentikasi gagal — pair ulang diperlukan.");
+                        $("pair").style.display = "flex";
+                    }
+                }
+            };
+            ws.onclose = (e) => {
+                // 4400 = removed / logged out, 4403 = revoked → kredensial invalid.
+                if (e.code === 4403 || e.code === 4400) {
+                    clearCreds();
+                    setStatus(
+                        (e.reason || "").includes("Logged out")
+                            ? "Logout berhasil — masukkan kode 6 digit bila ingin masuk lagi."
+                            : "Perangkat dicabut — pair ulang diperlukan."
+                    );
+                    $("pair").style.display = "flex";
+                    return;
+                }
+                setStatus("Terputus — menyambung ulang...");
+                setTimeout(connect, 1500);
+            };
+            ws.onerror = () => { /* ditangani onclose */ };
+        }
+
+        function setPcBanner(show, text) {
+            const b = $("pcbanner");
+            if (show) {
+                b.textContent = text || "⚠️ Neira PC offline";
+                b.style.display = "block";
+            } else {
+                b.style.display = "none";
+            }
+        }
+
+        $("pairbtn").onclick = () => {
+            const c = $("code").value.trim();
+            if (c.length === 6 && ws && ws.readyState === 1) {
+                ws.send(msg("pair_request", { pairing_code: c, name: "Neira Remote", platform: "android" }));
+            }
+        };
+
+        /* ── kode pairing = ANGKA saja, maks 6 digit (keyboard APK pun numeric-only) ── */
+        for (const id of ["code", "sp-code"]) {
+            $(id).addEventListener("input", () => {
+                $(id).value = $(id).value.replace(/\D+/g, "").slice(0, 6);
+            });
+        }
+
+        /* ── Settings panel ── */
+        $("settingsbtn").onclick = () => {
+            const panel = $("settingspanel");
+            const isOpen = panel.style.display !== "none";
+            if (!isOpen) {
+                // Isi URL saat ini
+                $("sp-url").value = gatewayBase();
+                $("sp-code").value = "";
+            }
+            panel.style.display = isOpen ? "none" : "flex";
+        };
+
+        $("sp-closebtn").onclick = () => { $("settingspanel").style.display = "none"; };
+
+        $("sp-savebtn").onclick = () => {
+            let url = $("sp-url").value.trim();
+            if (!url) return;
+            if (!/^https?:\/\//i.test(url)) url = "https://" + url;
+            try { url = new URL(url).origin; } catch { url = url.replace(/\/+$/, ""); }
+            // Ganti alamat gateway = NAVIGASI ke alamat baru (origin halaman jadi
+            // patokan) — bukan override localStorage yang bikin IP "beda sendiri".
+            localStorage.removeItem("neira_gateway_url");
+            localStorage.removeItem("neira_gateway_host");
+            if (url === location.origin) {
+                $("settingspanel").style.display = "none";
+                setStatus("Sudah terhubung ke alamat yang sama.");
+                return;
+            }
+            setStatus("Menyambung ke gateway baru: " + url + " ...");
+            location.href = url + "/";
+        };
+
+        $("sp-pairbtn").onclick = () => {
+            const c = $("sp-code").value.trim();
+            if (c.length === 6 && ws && ws.readyState === 1) {
+                ws.send(msg("pair_request", { pairing_code: c, name: "Neira Remote", platform: "android" }));
+            } else if (c.length === 6) {
+                // WS belum ready — reconnect dulu
+                setTimeout(() => { if (ws && ws.readyState === 1) ws.send(msg("pair_request", { pairing_code: c, name: "Neira Remote", platform: "android" })); }, 1500);
+            }
+        };
+
+        /* ── LOGOUT: cabut pairing device ini di gateway (self-revoke). Server
+              menutup WS dengan 4400 "Logged out" → onclose menghapus kredensial.
+              Satu-satunya cara masuk lagi = kode 6 digit baru dari PC Neira. ── */
+        $("sp-logoutbtn").onclick = () => {
+            if (!confirm("Keluar & cabut pairing perangkat ini?\nUntuk masuk lagi nanti, butuh kode 6 digit baru dari PC Neira.")) return;
+            if (ws && ws.readyState === 1) {
+                ws.send(msg("logout", {}));
+                setStatus("Logout...");
+            } else {
+                clearCreds();
+                location.reload();
+            }
+        };
+
+        $("sp-forgetbtn").onclick = () => {
+            if (!confirm("Hapus semua data pair dan reset aplikasi?")) return;
+            clearCreds();
+            localStorage.removeItem("neira_gateway_host");
+            localStorage.removeItem("neira_gateway_url");
+            location.reload();
+        };
+
+        $("form").onsubmit = (e) => {
+            e.preventDefault();
+            const text = $("cmd").value.trim();
+            if (text && ws && ws.readyState === 1) {
+                ws.send(msg("command", { text }));
+                log("saya: " + text, "me");
+                $("cmd").value = "";
+            }
+        };
+
+        $("clearbtn").onclick = () => { $("log").innerHTML = ""; };
+
+        /* ── Gambar: paste / upload 📎 → kompres → WS type "image" → Neira (PC) ── */
+        const IMG_MAX = 1280, IMG_QUALITY = 0.82;
+
+        function compressImage(blob) {
+            return new Promise((resolve, reject) => {
+                const url = URL.createObjectURL(blob);
+                const img = new Image();
+                img.onload = () => {
+                    try {
+                        let { width: w, height: h } = img;
+                        const scale = Math.min(1, IMG_MAX / Math.max(w, h));
+                        w = Math.max(1, Math.round(w * scale));
+                        h = Math.max(1, Math.round(h * scale));
+                        const cv = document.createElement("canvas");
+                        cv.width = w; cv.height = h;
+                        cv.getContext("2d").drawImage(img, 0, 0, w, h);
+                        URL.revokeObjectURL(url);
+                        const out = cv.toDataURL("image/jpeg", IMG_QUALITY);
+                        resolve({ mime_type: "image/jpeg", data: out.split(",")[1] });
+                    } catch (e) { URL.revokeObjectURL(url); reject(e); }
+                };
+                img.onerror = () => { URL.revokeObjectURL(url); reject(new Error("gambar tidak terbaca")); };
+                img.src = url;
+            });
+        }
+
+        async function sendImage(blob) {
+            if (!ws || ws.readyState !== 1) {
+                log("error: belum tersambung — gambar tidak terkirim.", "err");
+                return;
+            }
+            try {
+                const img = await compressImage(blob);
+                const caption = $("cmd").value.trim();
+                ws.send(msg("image", {
+                    mime_type: img.mime_type, data: img.data, caption: caption
+                }));
+                log("saya: 🖼️ " + (caption || "(gambar)"), "me");
+                $("cmd").value = "";
+            } catch (e) {
+                log("error: gagal kirim gambar (" + e.message + ")", "err");
+            }
+        }
+
+        $("imgbtn").onclick = () => $("imgfile").click();
+        $("imgfile").onchange = (e) => {
+            const f = e.target.files && e.target.files[0];
+            if (f) sendImage(f);
+            e.target.value = "";
+        };
+
+        document.addEventListener("paste", (e) => {
+            const items = (e.clipboardData || {}).items || [];
+            for (const it of items) {
+                if (it.type && it.type.startsWith("image/")) {
+                    const f = it.getAsFile();
+                    if (f) { e.preventDefault(); sendImage(f); }
+                    return;
+                }
+            }
+        });
+
+        /* ── Mic: getUserMedia → /ws/phone-audio (PCM 16 kHz mono) ── */
+        let micOn = false, media = null, actx = null, proc = null, wsAudio = null;
+
+        function floatToPCM16(f, sr) {
+            const target = 16000;
+            const clamp = (v) => (v < -1 ? -1 : v > 1 ? 1 : v);
+            if (sr === target) {
+                const o = new Int16Array(f.length);
+                for (let i = 0; i < f.length; i++) {
+                    const v = clamp(f[i]);
+                    o[i] = v < 0 ? v * 0x8000 : v * 0x7fff;
+                }
+                return o.buffer;
+            }
+            // resample linear ke 16 kHz
+            const ratio = sr / target;
+            const outLen = Math.floor(f.length / ratio);
+            const o = new Int16Array(outLen);
+            for (let i = 0; i < outLen; i++) {
+                const idx = i * ratio, i0 = Math.floor(idx);
+                const i1 = Math.min(i0 + 1, f.length - 1);
+                const v = clamp(f[i0] * (1 - (idx - i0)) + f[i1] * (idx - i0));
+                o[i] = v < 0 ? v * 0x8000 : v * 0x7fff;
+            }
+            return o.buffer;
+        }
+
+        function startPipeline() {
+            if (actx || !media) return;
+            try {
+                const AC = window.AudioContext || window.webkitAudioContext;
+                // Jangan paksa sampleRate 16000 — banyak Android WebView tidak support;
+                // floatToPCM16 sudah handle resample dari sampleRate native.
+                actx = new AC();
+                console.log("[mic] AudioContext sampleRate=" + actx.sampleRate);
+                const src = actx.createMediaStreamSource(media);
+                proc = actx.createScriptProcessor(4096, 1, 1);
+                const mute = actx.createGain();
+                mute.gain.value = 0;
+                src.connect(proc);
+                proc.connect(mute);
+                mute.connect(actx.destination);
+                proc.onaudioprocess = (e) => {
+                    if (!wsAudio || wsAudio.readyState !== 1) return;
+                    try {
+                        wsAudio.send(floatToPCM16(
+                            e.inputBuffer.getChannelData(0), actx.sampleRate));
+                    } catch { /* ws menutup */ }
+                };
+            } catch (e) {
+                log("error: audio engine gagal (" + e.name + ": " + e.message + ")", "err");
+                console.log("[mic] AudioContext gagal:", e);
+            }
+        }
+
+        function openAudioWS() {
+            wsAudio = new WebSocket(
+                wsBase() + "/ws/phone-audio" +
+                "?device_id=" + encodeURIComponent(device_id) +
+                "&device_key=" + encodeURIComponent(device_key));
+            wsAudio.binaryType = "arraybuffer";
+            wsAudio.onopen = () => { if (micOn) startPipeline(); };
+            wsAudio.onclose = () => {
+                if (micOn) setTimeout(() => { if (micOn) openAudioWS(); }, 2000);
+            };
+            wsAudio.onerror = () => { /* ditangani onclose */ };
+        }
+
+        async function micStart() {
+            if (micOn) return;
+            if (!device_id || !device_key) {
+                log("Belum dipair — masukkan kode 6 digit dulu sebelum pakai mic.", "err");
+                return;
+            }
+            // Log konteks untuk diagnosa
+            console.log("[mic] isSecureContext=" + isSecureContext + " mediaDevices=" + (!!navigator.mediaDevices));
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                log("error: getUserMedia tidak tersedia — halaman bukan secure origin?", "err");
+                return;
+            }
+            // Coba constraint lengkap dulu, kalau gagal NotReadableError → fallback minimal
+            const constraints = [
+                { audio: { channelCount: 1, echoCancellation: true, noiseSuppression: true, sampleRate: 16000 } },
+                { audio: { channelCount: 1, echoCancellation: true, noiseSuppression: true } },
+                { audio: true }
+            ];
+            let lastErr = null;
+            for (const c of constraints) {
+                try {
+                    console.log("[mic] mencoba constraint:", JSON.stringify(c));
+                    media = await navigator.mediaDevices.getUserMedia(c);
+                    lastErr = null;
+                    break;
+                } catch (e) {
+                    console.log("[mic] gagal (" + e.name + "): " + e.message + " constraint=" + JSON.stringify(c));
+                    lastErr = e;
+                    // Hanya lanjut fallback untuk NotReadableError / OverconstrainedError
+                    if (e.name !== "NotReadableError" && e.name !== "OverconstrainedError" && e.name !== "ConstraintNotSatisfiedError") break;
+                }
+            }
+            if (lastErr) {
+                log("error: mic gagal (" + lastErr.name + ": " + lastErr.message + ")", "err");
+                console.log("[mic] semua constraint gagal — name=" + lastErr.name + " message=" + lastErr.message);
+                return;
+            }
+            micOn = true;
+            document.body.classList.add("mic");
+            $("micbtn").classList.add("on");
+            $("status").textContent = "Listening";
+            openAudioWS();
+            log("mic aktif — suara HP dialirkan ke Neira.", "dim");
+        }
+
+        function micStop() {
+            if (!micOn) return;
+            micOn = false;
+            document.body.classList.remove("mic");
+            $("micbtn").classList.remove("on");
+            try { if (proc) proc.disconnect(); } catch { }
+            try { if (media) media.getTracks().forEach(t => t.stop()); } catch { }
+            try { if (actx) actx.close(); } catch { }
+            try { if (wsAudio) wsAudio.close(); } catch { }
+            proc = media = actx = wsAudio = null;
+            setStatus(lastStatus);
+            log("mic nonaktif.", "dim");
+        }
+
+        $("micbtn").onclick = () => { micOn ? micStop() : micStart(); };
+
+        setInterval(() => { if (ws && ws.readyState === 1) ws.send(msg("ping")); }, 15000);
+        connect();
+    </script>
+</body>
+
+</html>

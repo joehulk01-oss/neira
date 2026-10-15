@@ -1,0 +1,53 @@
+POLICY HKCU chrome: (tidak ada)
+POLICY HKCU edge: (tidak ada)
+POLICY HKLM chrome: (tidak ada)
+POLICY HKLM edge: (tidak ada)
+PROFILE Google/Chrome/User Data/Default: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 1: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 11: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 12: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 13: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 14: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 14-no: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 15: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 16: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 17: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 18: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 19: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 2: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 20: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 22: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 24: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 25: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 26: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 27: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 28: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 29: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 3: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 30: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 31: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 32: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 33: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 4: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 5: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 6: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 7: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 8: bsk-ext=belum (total ext 0)
+PROFILE Google/Chrome/User Data/Profile 9: bsk-ext=belum (total ext 0)
+PROFILE Microsoft/Edge/User Data/Default: bsk-ext=belum (total ext 0)
+BSK STATUS: {
+  "daemon_version": "0.3.1",
+  "protocol_version": "1.3",
+  "pid": 4284,
+  "uptime_secs": 900,
+  "ws_port": 52800,
+  "sock_path": "\\\\.\\pipe\\bsk-daemon-82f8e8553584f262",
+  "browsers": [
+    {
+      "instance_id": "e6f832f9",
+      "browser_name": "chrome",
+      "browser_version": "154.0.0.0",
+      "extension_version": "0.3.2",
+      "label": "",
+      "session_count": 0,
+      "connected_a

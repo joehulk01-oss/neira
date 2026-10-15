@@ -1,0 +1,10 @@
+session_id=knmo
+{
+  "agent_window_id": 532090629,
+  "browser_instance_id": "e6f832f9",
+  "interaction": {
+    "borrow_confirmation": "always",
+    "request_help": "enabled"
+  },
+  "session_id": "knmo"
+}

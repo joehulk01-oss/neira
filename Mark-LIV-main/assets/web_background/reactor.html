@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Neira — Web 3D Reactor</title>
+<style>
+  html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden;
+               background: #04070d; }
+  #stage { position: fixed; inset: 0; }
+  #name  { position: fixed; left: 0; right: 0; top: 50%; transform: translateY(-50%);
+           text-align: center; color: #eef4ff; font-family: "Courier New", monospace;
+           font-weight: bold; letter-spacing: 0.35em; pointer-events: none;
+           text-shadow: 0 0 12px rgba(34, 211, 238, 0.8); opacity: 0.85; }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<div id="name"></div>
+
+<script src="three.min.js"></script>
+<script src="EffectComposer.js"></script>
+<script src="RenderPass.js"></script>
+<script src="ShaderPass.js"></script>
+<script src="CopyShader.js"></script>
+<script src="LuminosityHighPassShader.js"></script>
+<script src="UnrealBloomPass.js"></script>
+<script>
+/* ═══════════════════════════════════════════════════════════════════════
+   Neira — Konsep C: reaktor three.js + UnrealBloomPass.
+   Jembatan state dari Python: window.__reactorState(dict) ~25x per detik.
+   ═══════════════════════════════════════════════════════════════════════ */
+(function () {
+  "use strict";
+
+  var S = { name: "", amp: 0, speaking: false, muted: false, state: "INITIALISING",
+            open: 0, wide: 0, t: 0, boot: 0, shut: 0,
+            main: "#22d3ee", acc: "#a78bfa", bg: "#04070d", white: "#eef4ff" };
+
+  window.__reactorState = function (st) {
+    if (!st) return;
+    for (var k in st) if (Object.prototype.hasOwnProperty.call(st, k)) S[k] = st[k];
+    var el = document.getElementById("name");
+    if (el) {
+      el.textContent = S.name || "";
+      el.style.color = S.white;
+    }
+  };
+
+  function easeOutBack(x) {
+    x = Math.max(0, Math.min(1, x));
+    var c1 = 1.70158, c3 = c1 + 1;
+    return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2);
+  }
+  function easeOutCubic(x) {
+    x = Math.max(0, Math.min(1, x));
+    return 1 - Math.pow(1 - x, 3);
+  }
+
+  var stage = document.getElementById("stage");
+  var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  stage.appendChild(renderer.domElement);
+
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight,
+                                           0.1, 60);
+  camera.position.set(0, 0, 3.4);
+
+  /* ── Inti plasma: bola noise fbm + fresnel ───────────────────────────── */
+  var coreUniforms = {
+    uTime:  { value: 0 }, uAmp: { value: 0 }, uOpen: { value: 0 },
+    uMain:  { value: new THREE.Color(S.main) },
+    uAcc:   { value: new THREE.Color(S.acc) },
+    uWhite: { value: new THREE.Color(S.white) }
+  };
+  var coreMat = new THREE.ShaderMaterial({
+    uniforms: coreUniforms,
+    transparent: true,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+    vertexShader: [
+      "uniform float uTime, uAmp, uOpen;",
+      "varying vec3 vN; varying vec3 vP;",
+      "float hash3(vec3 p){ return fract(sin(dot(p, vec3(12.9898,78.233,45.164))) * 43758.5453); }",
+      "float noise3(vec3 p){ vec3 i = floor(p), f = fract(p); f = f*f*(3.0-2.0*f);",
+      "  float n000=hash3(i), n100=hash3(i+vec3(1,0,0)), n010=hash3(i+vec3(0,1,0)), n110=hash3(i+vec3(1,1,0));",
+      "  float n001=hash3(i+vec3(0,0,1)), n101=hash3(i+vec3(1,0,1)), n011=hash3(i+vec3(0,1,1)), n111=hash3(i+vec3(1,1,1));",
+      "  return mix(mix(mix(n000,n100,f.x), mix(n010,n110,f.x), f.y),",
+      "             mix(mix(n001,n101,f.x), mix(n011,n111,f.x), f.y), f.z); }",
+      "void main(){",
+      "  vN = normalize(normalMatrix * normal);",
+      "  float n = noise3(position * 3.1 + vec3(0.0, uTime * 0.5, uTime * 0.3));",
+      "  float d = 1.0 + (0.10 + 0.16 * uAmp + 0.06 * uOpen) * (n - 0.5) * 2.0;",
+      "  vec3 p = position * d;",
+      "  vP = p;",
+      "  gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0);",
+      "}"
+    ].join("\n"),
+    fragmentShader: [
+      "uniform float uTime, uAmp;",
+      "uniform vec3 uMain, uAcc, uWhite;",
+      "varying vec3 vN; varying vec3 vP;",
+      "float hash3(vec3 p){ return fract(sin(dot(p, vec3(12.9898,78.233,45.164))) * 43758.5453); }",
+      "float noise3(vec3 p){ vec3 i = floor(p), f = fract(p); f = f*f*(3.0-2.0*f);",
+      "  float n000=hash3(i), n100=hash3(i+vec3(1,0,0)), n010=hash3(i+vec3(0,1,0)), n110=hash3(i+vec3(1,1,0));",
+      "  float n001=hash3(i+vec3(0,0,1)), n101=hash3(i+vec3(1,0,1)), n011=hash3(i+vec3(0,1,1)), n111=hash3(i+vec3(1,1,1));",
+      "  return mix(mix(mix(n000,n100,f.x), mix(n010,n110,f.x), f.y),",
+      "             mix(mix(n001,n101,f.x), mix(n011,n111,f.x), f.y), f.z); }",
+      "float fbm(vec3 p){ float v = 0.0, a = 0.5;",
+      "  for (int i = 0; i < 4; i++) { v += a * noise3(p); p *= 2.03; a *= 0.5; } return v; }",
+      "void main(){",
+      "  float n = fbm(vP * 3.4 + vec3(0.0, uTime * 0.4, uTime * 0.25));",
+      "  float fres = pow(1.0 - abs(vN.z), 2.0);",
+      "  vec3 plasma = mix(uMain, uAcc, n);",
+      "  vec3 col = plasma * (0.55 + 1.5 * n + 0.8 * uAmp) + uWhite * fres * 0.9;",
+      "  gl_FragColor = vec4(col, 0.92);",
+      "}"
+    ].join("\n")
+  });
+  var core = new THREE.Mesh(new THREE.IcosahedronGeometry(0.55, 5), coreMat);
+  scene.add(core);
+
+  /* ── 3 cincin torus orbit (gyroscope) ────────────────────────────────── */
+  var ringDefs = [
+    { r: 0.95, tube: 0.016, tilt: [1.05, 0, 0.10],  speed:  0.55, col: "acc"  },
+    { r: 1.15, tube: 0.012, tilt: [-0.62, 0, -0.2], speed: -0.40, col: "main" },
+    { r: 0.78, tube: 0.011, tilt: [1.45, 0.3, 0],   speed:  0.75, col: "acc"  }
+  ];
+  var rings = [];
+  ringDefs.forEach(function (d) {
+    var mat = new THREE.MeshBasicMaterial({
+      color: new THREE.Color(S[d.col]), transparent: true, opacity: 0.85,
+      blending: THREE.AdditiveBlending, depthWrite: false
+    });
+    var m = new THREE.Mesh(new THREE.TorusGeometry(d.r, d.tube, 12, 128), mat);
+    m.rotation.set(d.tilt[0], d.tilt[1], d.tilt[2]);
+    m.userData = d;
+    scene.add(m);
+    rings.push(m);
+  });
+
+  /* ── Partikel orbital ────────────────────────────────────────────────── */
+  var NP = 420;
+  var pGeo = new THREE.BufferGeometry();
+  var pPos = new Float32Array(NP * 3);
+  var pDat = [];
+  for (var i = 0; i < NP; i++) {
+    pDat.push({
+      theta: Math.random() * Math.PI * 2,
+      rad: 0.55 + Math.random() * 1.15,
+      incl: Math.random() * Math.PI,
+      speed: (0.25 + Math.random() * 0.85) * (Math.random() < 0.7 ? 1 : -1)
+    });
+  }
+  pGeo.setAttribute("position", new THREE.BufferAttribute(pPos, 3));
+  var pMat = new THREE.PointsMaterial({
+    color: new THREE.Color(S.acc), size: 0.022, transparent: true, opacity: 0.8,
+    blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true
+  });
+  var points = new THREE.Points(pGeo, pMat);
+  scene.add(points);
+
+  /* ── Shockwave boot ──────────────────────────────────────────────────── */
+  var shockMat = new THREE.MeshBasicMaterial({
+    color: new THREE.Color(S.white), transparent: true, opacity: 0,
+    blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide
+  });
+  var shock = new THREE.Mesh(new THREE.RingGeometry(0.96, 1.0, 96), shockMat);
+  scene.add(shock);
+
+  /* ── Bloom composer ──────────────────────────────────────────────────── */
+  var composer = null;
+  try {
+    composer = new THREE.EffectComposer(renderer);
+    composer.addPass(new THREE.RenderPass(scene, camera));
+    var bloom = new THREE.UnrealBloomPass(
+      new THREE.Vector2(window.innerWidth, window.innerHeight), 1.35, 0.55, 0.18);
+    composer.addPass(bloom);
+  } catch (e) { composer = null; }
+
+  window.addEventListener("resize", function () {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    if (composer) composer.setSize(window.innerWidth, window.innerHeight);
+  });
+
+  /* ── Loop animasi ────────────────────────────────────────────────────── */
+  var t0 = performance.now();
+  function frame() {
+    requestAnimationFrame(frame);
+    var t = (performance.now() - t0) / 1000;
+
+    var boot = (S.boot >= 1) ? 1 : easeOutBack(S.boot / 0.8);
+    var bright = (S.boot >= 1) ? 1 : easeOutCubic(S.boot / 0.55);
+    var sh = S.shut || 0;
+    var grow = boot * (1 - 0.85 * sh * sh);
+    var amp = S.amp || 0;
+    var rate = 1 + (S.state === "THINKING" || S.state === "PROCESSING" ? 1.7 : 0)
+                 + (S.speaking ? 1.1 : 0) + amp * 1.2;
+    rate *= Math.max(0, 1 - sh);
+
+    core.scale.setScalar(Math.max(0.001, grow * (1 + 0.10 * amp + 0.05 * (S.open || 0))));
+    core.rotation.y = t * 0.35 * rate;
+    core.rotation.x = Math.sin(t * 0.22) * 0.25;
+    coreUniforms.uTime.value = t;
+    coreUniforms.uAmp.value = amp;
+    coreUniforms.uOpen.value = S.open || 0;
+    coreUniforms.uMain.value.set(S.main);
+    coreUniforms.uAcc.value.set(S.acc);
+    coreUniforms.uWhite.value.set(S.white);
+    coreMat.opacity = bright * (1 - 0.9 * sh);
+
+    rings.forEach(function (m, idx) {
+      var d = m.userData;
+      m.rotation.z += d.speed * 0.016 * rate;
+      m.rotation.x = d.tilt[0] + Math.sin(t * 0.23 + idx) * 0.12
+                   + (S.open || 0) * 0.25 * (S.speaking ? 1 : 0);
+      m.scale.setScalar(Math.max(0.001, grow));
+      m.material.color.set(S[d.col]);
+      m.material.opacity = (0.55 + 0.3 * amp) * bright * (1 - sh * 0.85);
+    });
+
+    var pos = pGeo.attributes.position.array;
+    for (var i = 0; i < NP; i++) {
+      var p = pDat[i];
+      p.theta += p.speed * 0.016 * rate;
+      if (sh > 0) p.rad *= (1 - 0.9 * 0.016 * sh);
+      var x = Math.cos(p.theta) * p.rad;
+      var y = Math.sin(p.theta) * p.rad * Math.sin(p.incl);
+      var z = Math.sin(p.theta) * p.rad * Math.cos(p.incl);
+      pos[i * 3] = x * grow; pos[i * 3 + 1] = y * grow; pos[i * 3 + 2] = z * grow;
+    }
+    pGeo.attributes.position.needsUpdate = true;
+    pMat.color.set(S.acc);
+    pMat.opacity = (0.5 + 0.4 * amp) * bright * (1 - sh * 0.85);
+
+    /* shockwave boot */
+    if (S.boot > 0 && S.boot < 1) {
+      var w = Math.abs(S.boot - 0.88);
+      if (w < 0.12) {
+        shock.scale.setScalar(0.3 + S.boot * 2.4);
+        shockMat.opacity = (1 - w / 0.12) * 0.8;
+        shockMat.color.set(S.white);
+      } else shockMat.opacity = 0;
+    } else shockMat.opacity = 0;
+
+    scene.background = new THREE.Color(S.bg);
+    if (composer) composer.render(); else renderer.render(scene, camera);
+  }
+  frame();
+})();
+</script>
+</body>
+</html>

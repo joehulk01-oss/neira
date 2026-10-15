@@ -1,0 +1,23 @@
+# repo_health_check.yaml — Blueprint Tahap 7 (workflow kedua)
+# Kesehatan repo: peta kode → kesehatan memory → kejujuran metrik → jejak error.
+# Semua langkah read-only & offline.
+name: repo_health_check
+description: Kesehatan repo — peta kode, memory, metrik, jejak error di audit
+risk_level: low
+steps:
+  - skill: workspace_dev
+    params: {cmd: analyze}
+    policy_action: workspace.analyze
+    expect: "repo"
+  - skill: workspace_dev
+    params: {cmd: logs, pattern: "deny"}
+    policy_action: logs.scan
+    expect: "log"
+  - skill: memory_compaction
+    params: {cmd: analyze}
+    policy_action: memory.analyze
+    expect: "memory"
+  - skill: metrics
+    params: {cmd: stats}
+    policy_action: metrics.stats
+    expect: "metrik"
